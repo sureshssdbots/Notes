@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B.Sc. B.Ed. Important Notes</title>
+    <title>JNVU B.Sc. B.Ed. Resource Hub</title>
     <style>
-        body { font-family: sans-serif; text-align: center; background: #f4f4f9; padding-top: 30px; margin: 0; min-height: 100vh; display: flex; flex-direction: column; }
-        .container { background: white; width: 80%; max-width: 400px; margin: auto; padding: 20px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        h1 { color: #333; font-size: 24px; }
+        body { font-family: 'Segoe UI', sans-serif; text-align: center; background: #f4f4f9; margin: 0; padding: 0; min-height: 100vh; display: flex; flex-direction: column; }
+        .header { background: #2c3e50; color: white; padding: 20px; }
+        .container { background: white; width: 90%; max-width: 500px; margin: 20px auto; padding: 20px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        h1 { font-size: 22px; margin: 5px 0; }
+        h3 { color: #e74c3c; margin-top: 20px; border-bottom: 2px solid #eee; padding-bottom: 5px; }
         .note-link { 
-            display: block; padding: 12px; margin: 10px 0; background: #e74c3c; 
+            display: block; padding: 12px; margin: 8px 0; background: #e74c3c; 
             color: white; text-decoration: none; border-radius: 5px; font-weight: bold; cursor: pointer;
         }
         #videoOverlay {
@@ -17,19 +19,31 @@
             background: rgba(0,0,0,0.95); z-index: 1000;
         }
         video { width: 90%; height: 80%; margin-top: 5%; }
-        footer { margin-top: auto; padding: 20px; color: #777; font-size: 14px; }
+        footer { margin-top: auto; padding: 20px; color: #555; font-size: 14px; background: #ddd; }
     </style>
 </head>
 
 <body onclick="playVideo()">
 
+    <div class="header">
+        <h1>Jai Narain Vyas University (JNVU)</h1>
+        <p>B.Sc. B.Ed. Academic Resource Portal - 2026</p>
+    </div>
+
     <div class="container">
-        <h1>B.Sc. B.Ed. Important Notes</h1>
-        <div class="note-link" onclick="playVideo(event)">Physics Important Notes</div>
-        <div class="note-link" onclick="playVideo(event)">Maths/Calculus Important Notes</div>
-        <div class="note-link" onclick="playVideo(event)">Chemistry Important Notes</div>
-        <div class="note-link" onclick="playVideo(event)">Zoology Important Notes</div>
-        <div class="note-link" onclick="playVideo(event)">Botany Important Notes</div>
+        <h3>Important Question Banks</h3>
+        <div class="note-link" onclick="playVideo(event)">Physics Important Questions (PDF)</div>
+        <div class="note-link" onclick="playVideo(event)">Maths/Calculus Important Questions (PDF)</div>
+        
+        <h3>Lecture Notes & Study Material</h3>
+        <div class="note-link" onclick="playVideo(event)">Chemistry Notes (Chapter-wise)</div>
+        <div class="note-link" onclick="playVideo(event)">Zoology Comprehensive Notes</div>
+        <div class="note-link" onclick="playVideo(event)">Botany Study Guide</div>
+        
+        <h3>Previous Years Papers</h3>
+        <div class="note-link" onclick="playVideo(event)">2025 Solved Paper (PDF)</div>
+        <div class="note-link" onclick="playVideo(event)">2024 Solved Paper (PDF)</div>
+        <p>Click any link above to download PDF resources.</p>
     </div>
 
     <footer>Powered By SSD</footer>
@@ -43,18 +57,13 @@
     <script>
         function playVideo(event) {
             if(event) event.stopPropagation();
-            
             var overlay = document.getElementById("videoOverlay");
             var video = document.getElementById("myVideo");
-            
             overlay.style.display = "block";
             video.muted = false; 
             video.volume = 1.0;  
-            video.play().catch(function(error) {
-                console.log("Interaction required to play with sound.");
-            });
+            video.play().catch(function(error) { console.log("Interaction required."); });
         }
-
         function closeVideo(event) {
             var overlay = document.getElementById("videoOverlay");
             var video = document.getElementById("myVideo");
